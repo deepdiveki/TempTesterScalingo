@@ -1,3 +1,3 @@
-const SingleExample = ({ example }: { example: AiExample }) => {};
+const SingleExample = () => {};
 
 export default SingleExample;

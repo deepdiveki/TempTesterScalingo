@@ -1,5 +1,10 @@
+const SocialSignup: React.FC = () => {
+  return (
+    <div>
+    </div>
+  );
+};
 
-const SocialSignup = () => {};
 
 export default SocialSignup;
  
