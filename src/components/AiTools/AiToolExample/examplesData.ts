@@ -3,49 +3,49 @@ import { AiExample } from "@/types/aiExample";
 const exampleData: AiExample[] = [
   {
     id: 11,
-    title: "Content Writing Tool",
+    title: "Arbeitsblatt Generator",
     description:
-      "Generate any content based on your topic, subject and number of paragraphs.",
+      "Ein Tool zur automatischen Erstellung von Arbeitsblättern für verschiedene Fächer und Altersstufen.",
     icon: "/images/features/icon-01.svg",
     path: "/ai-examples/content-writing-tool",
   },
   {
     id: 27,
-    title: "Business Name Generator",
+    title: "KI Chatbot",
     description:
-      "Generate any content based on your topic, subject and number of paragraphs.",
+      "Ein interaktiver Chatbot, der auf natürliche Spracheingaben reagiert und vielseitig einsetzbar ist.",
     icon: "/images/ai-tools/icon-2.svg",
     path: "/ai-examples/business-name-generator",
   },
   {
     id: 21,
-    title: "Article Title Writer",
+    title: "KI-Assistenten Builder",
     description:
-      "Generate any content based on your topic, subject and number of paragraphs.",
+      "Ein Werkzeug zum Erstellen maßgeschneiderter KI-Assistenten für spezifische Aufgaben oder Branchen.",
     icon: "/images/ai-tools/icon-3.svg",
     path: "/ai-examples/article-title-generator",
   },
   {
     id: 22,
-    title: "Product Name Generator",
+    title: "Personenchat",
     description:
-      "Generate any content based on your topic, subject and number of paragraphs.",
+      "Ein Chat-Tool, das personalisierte Antworten basierend auf einem bestimmten Kontext liefert.",
     icon: "/images/ai-tools/icon-1.svg",
     path: "/ai-examples/product-name-generator",
   },
   {
     id: 23,
-    title: "Spreadsheet Creator",
+    title: "QR Code Generator",
     description:
-      "Generate any content based on your topic, subject and number of paragraphs.",
+      "Ein Generator zur schnellen Erstellung von QR-Codes für Webseiten, Texte oder andere Inhalte.",
     icon: "/images/ai-tools/icon-2.svg",
     path: "/ai-examples/spreadsheet-generator",
   },
   {
     id: 23,
-    title: "Interview Questions",
+    title: "KI-Assistenten erstellen",
     description:
-      "Generate any content based on your topic, subject and number of paragraphs.",
+      "KI-Assistenten der mit bereitgestellten Hintergrundwissen arbeitet. Er kann Fragen beantworten und Aufgaben erledigen.",
     icon: "/images/ai-tools/icon-3.svg",
     path: "/ai-examples/interview-question-generator",
   },
