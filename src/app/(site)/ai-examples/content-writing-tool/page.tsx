@@ -9,20 +9,26 @@ import z from "zod";
 import { integrations, messages } from "../../../../../integrations.config";
 
 const ContentGeneratorSchema = z.object({
-  contentTopic: z.string(),
-  numberOfParagraphs: z.string(),
-  contentType: z.string(),
+  thema: z.string(),
+  fach: z.string(),
+  schulform: z.string(),
+  altersstufe: z.string(),
+  sprache: z.string(),
 });
 
-const paragraphsCount = [1, 2, 3, 4, 5];
-const contentTypes = ["Article", "Listicles", "How to guides", "Tweet"];
+const fach = ["Biologie","Deutsch","Englisch", "Französisch", "Geschichte", "PGW", "Informatik", "Kunst" ]; //Fach 
+const schulform = ["Grundschule", "Gymnasium", "Berufliche Schule", "Förderschule", "Stadtteilschule"];  //Schulform 
+const altersstufe = ["1./2. Klasse", "3./4. Klasse", "Unterstufe", "Mittelstufe", "Oberstufe"];  //altersstufe
+const sprache = ["Deutsche", "Englisch", "Italienisch", "Spanisch", "Französisch", "Russisch", "Ukrainisch"];  //sprache
 
 const ContentGeneratorPage = () => {
   const [generatedContent, setGeneratedContent] = useState("");
   const [data, setData] = useState({
-    contentTopic: "",
-    numberOfParagraphs: "",
-    contentType: "",
+    thema: "",
+    fach: "",
+    schulform: "",
+    altersstufe: "",
+    sprache: "",
   });
 
   const handleChange = (e: any) => {
@@ -48,23 +54,25 @@ const ContentGeneratorPage = () => {
 
     setGeneratedContent("Loading....");
 
-    // the prompt
-    const prompt = [
-      {
-        role: "system",
-        content:
-          "You will be provided with the content topic and the number of paragraphs and the content type. Your task is to generate the content with the exact paragraphs number \n",
-      },
-      {
-        role: "user",
-        content: `Content Topic: ${data.contentTopic} \nNumber of Paragraphs: ${data.numberOfParagraphs} \nContent-Type: ${data.contentType}`,
-      },
-      {
-        role: "user",
-        content:
-          "Remove all the paragraph title and add line break after each paragraph",
-      },
-    ];
+// the prompt
+const prompt = [
+  {
+    role: "system",
+    content:
+      "Du bist ein KI-gestütztes Tool, das personalisierte Arbeitsblätter für den Schulunterricht erstellt. Dein Ziel ist es, ein Arbeitsblatt basierend auf den Vorgaben zu erstellen.",
+  },
+  {
+    role: "user",
+    content: `Thema: ${data.thema} \nFach: ${data.fach} \nSchulform: ${data.schulform} \nAltersstufe: ${data.altersstufe} \nSprache: ${data.sprache}`,
+  },
+  {
+    role: "user",
+    content:
+      "Erstelle ein Arbeitsblatt zu diesem Thema. Halte dich an die gewählte Altersstufe und Schulform. Entferne alle Überschriften der Absätze und füge nach jedem Absatz einen Zeilenumbruch hinzu. Das Arbeitsblatt soll kreativ, lehrreich und leicht verständlich sein.",
+  },
+];
+
+
 
     //for the demo
     const apiKey = localStorage.getItem("apiKey");
@@ -87,9 +95,11 @@ const ContentGeneratorPage = () => {
     }
 
     setData({
-      contentTopic: "",
-      numberOfParagraphs: "",
-      contentType: "",
+      thema: "",
+      fach: "",
+      schulform: "",
+      altersstufe: "",
+      sprache: "",
     });
   };
 
@@ -97,7 +107,7 @@ const ContentGeneratorPage = () => {
     <>
       <title>Content Generator| AI Tool - Next.js Template for AI Tools</title>
       <meta name="description" content="This is AI Examples page for AI Tool" />
-      <Breadcrumb pageTitle="Content Generator" />
+      <Breadcrumb pageTitle="Arbeitsblatt mit KI" />
 
       <section className="pb-17.5 lg:pb-22.5 xl:pb-27.5">
         {/* <div className="gradient-box">
@@ -114,40 +124,56 @@ const ContentGeneratorPage = () => {
         <div className="mx-auto grid max-w-[1170px] gap-8 px-4 sm:px-8 lg:grid-cols-12 xl:px-0">
           <div className="gradient-box rounded-lg bg-dark-8 p-8 lg:col-span-4">
             <h2 className="pb-2 text-2xl font-bold text-white">
-              Content Topic
+              Arbeitsblatt mit KI erstellen
             </h2>
-            <p className="pb-6">What your content will be about?</p>
+            <p className="pb-6">Thema oder Fragestellung</p>
             <form onSubmit={handleSubmit}>
               <textarea
-                value={data.contentTopic}
-                name="contentTopic"
+                value={data.thema}
+                name="thema"
                 onChange={handleChange}
                 className="min-h-[160px] w-full rounded-lg border border-white/[0.12] bg-dark-7 p-5 text-white outline-none focus:border-purple"
-                placeholder="Type your topic"
+                placeholder="Nenne die wesentlichen Punkte, die in dem Text behandelt werden sollen"
                 required
               />
 
               <Options
-                values={paragraphsCount}
-                title={"Number of Paragraphs"}
-                name={"numberOfParagraphs"}
+                values={fach}
+                title={"Fach auswählen"}
+                name={"fach"}
                 handleChange={handleChange}
-                selected={data.numberOfParagraphs}
+                selected={data.fach}
               />
 
               <Options
-                values={contentTypes}
-                title={"Select Type"}
-                name={"contentType"}
+                values={schulform}
+                title={"Schulform auswählen"}
+                name={"schulform"}
                 handleChange={handleChange}
-                selected={data.contentType}
+                selected={data.schulform}
               />
+
+              <Options
+                values={altersstufe}
+                title={"Altersstufe auswählen"}
+                name={"altersstufe"}
+                handleChange={handleChange}
+                selected={data.altersstufe}
+              />
+<Options
+                values={sprache}
+                title={"Sprache auswählen"}
+                name={"sprache"}
+                handleChange={handleChange}
+                selected={data.sprache}
+              />
+
 
               <button
                 type="submit"
                 className="hero-button-gradient mt-5 w-full rounded-lg px-7 py-3 text-center font-medium text-white duration-300 ease-in hover:opacity-80 "
               >
-                Generate
+                Generieren
               </button>
             </form>
           </div>
