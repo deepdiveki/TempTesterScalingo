@@ -30,7 +30,7 @@ export default function DocsPage() {
                 <h1>Wir bieten Fortbildungen und KeyNotes zum Thema Künstliche Intelligenz in der Schule an</h1>
 
                 <p className="font-medium">
-                  Wir bieten Fortbildungen zum Thema "Künstliche Intelligenz in der Schule“ für Lehrkräfte, Lehramtsstudierende und Angestellte an Bildungsinstituten an. Diese Fortbildungen können sowohl online als auch als Pädagogischer Tag / SchilF / Blockveranstaltung bei Ihnen vor Ort gebucht werden.
+                  Wir bieten Fortbildungen zum Thema Künstliche Intelligenz in der Schule für Lehrkräfte, Lehramtsstudierende und Angestellte an Bildungsinstituten an. Diese Fortbildungen können sowohl online als auch als Pädagogischer Tag / SchilF / Blockveranstaltung bei Ihnen vor Ort gebucht werden.
                   <br />
                   <br />
                   In diesen Fortbildungen stärken die Teilnehmenden ihre Kompetenzen im Umgang mit Künstlicher Intelligenz. Sie erhalten praktische und direkt anwendbare Unterrichtsmethoden/ KI-Tools sowie Materialien für den Einsatz von KI. Die Teilnehmenden lernen verschiedene KI-basierte Werkzeuge kennen und erproben eine neue Form des Team-Teachings.
