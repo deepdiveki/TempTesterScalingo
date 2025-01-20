@@ -51,7 +51,7 @@ const ProductNameGeneratorPage = () => {
       },
       {
         role: "user",
-        content: `Product description: ${data.description} \n Business seed words: ${data.seedWords}`,
+        content: `Product description: ${data.description} \n Language: ${data.seedWords}`,
       },
     ];
 
@@ -84,46 +84,59 @@ const ProductNameGeneratorPage = () => {
   return (
     <>
       <title>
-        Product Name Generator | AI Tool - Next.js Template for AI Tools
+        Persona Chat
       </title>
       <meta name="description" content="This is AI Examples page for AI Tool" />
-      <Breadcrumb pageTitle="Product Name Generator" />
+      <Breadcrumb pageTitle="Persona Chat" />
 
       <section className="pb-17.5 lg:pb-22.5 xl:pb-27.5">
         <div className="mx-auto grid max-w-[1170px] gap-8 px-4 sm:px-8 lg:grid-cols-12 xl:px-0">
           <div className="gradient-box rounded-lg bg-dark-8 p-8 lg:col-span-4">
             <h2 className="pb-2 text-2xl font-bold text-white">
-              Product Topic
+              Persona Chat
             </h2>
-            <p className="pb-6">What your product name will be?</p>
+            <p className="pb-6">Mit welcher Persönlichkeit möchtest du Chatten?</p>
             <form onSubmit={handleSubmit}>
               <div className="flex flex-col">
                 <label htmlFor="description" className="pb-4">
-                  Description
+                  Wähle hier aus: 
                 </label>
-                <input
+                <select
                   onChange={handleChange}
                   value={data.description}
                   name="description"
-                  type="text"
                   className="rounded-lg border border-white/[0.12] bg-dark-7 px-5 py-3 text-white outline-none focus:border-purple"
-                  placeholder="Type your business keyword"
                   required
-                />
+                >
+                  <option value="" disabled>
+                    Wähle eine Persönlichkeit
+                  </option>
+                  <option value="Angela Merkel">Angela Merkel</option>
+                  <option value="Sophie Scholl">Sophie Scholl</option>
+                  <option value="Olaf Scholz">Olaf Scholz</option>
+                  <option value="Barack Obama">Barack Obama</option>
+                  <option value="Donald Trump">Donald Trump</option>
+                  <option value="Hermann Hesse">Hermann Hesse</option>
+                </select>
               </div>
 
               <div className="flex flex-col pt-5">
                 <label htmlFor="seedWords" className="pb-4">
-                  Seed Words
+                  Wähle die Sprache:
                 </label>
-                <input
+                <select
                   onChange={handleChange}
                   value={data.seedWords}
                   name="seedWords"
-                  type="text"
-                  className="rounded-lg border border-white/[0.12] bg-dark-7 py-3 pl-5 text-opacity-10 outline-none focus:border-purple"
-                  placeholder="Type your Seed Words"
-                />
+                  className="rounded-lg border border-white/[0.12] bg-dark-7 px-5 py-3 text-white outline-none focus:border-purple"
+                  required
+                >
+                  <option value="" disabled>
+                    Wähle eine Sprache
+                  </option>
+                  <option value="Deutsch">Deutsch</option>
+                  <option value="Englisch">Englisch</option>
+                </select>
               </div>
 
               <button

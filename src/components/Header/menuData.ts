@@ -9,13 +9,13 @@ const menuData: Menu[] = [
   },
   {
     id: 2,
-    title: "About",
+    title: "Über uns",
     newTab: false,
     path: "/about",
   },
   {
     id: 5,
-    title: "Pages",
+    title: "Fortbildungen",
     newTab: false,
     submenu: [
       {
@@ -35,37 +35,37 @@ const menuData: Menu[] = [
     submenu: [
       {
         id: 66,
-        title: "Content Writing Tool",
+        title: "Arbeitsblatt Generator",
         newTab: false,
         path: "/ai-examples/content-writing-tool",
       },
       {
         id: 67,
-        title: "Business Name Generator",
+        title: "KI Chatbot",
         newTab: false,
         path: "/ai-examples/business-name-generator",
       },
       {
         id: 69,
-        title: "Product Name Generator",
+        title: "Persona Chat",
         newTab: false,
         path: "/ai-examples/product-name-generator",
       },
       {
         id: 68,
-        title: "Article Title Generator",
+        title: "KI-Assistenten Builder",
         newTab: false,
         path: "/ai-examples/article-title-generator",
       },
       {
         id: 70,
-        title: "Spreadsheet Generator",
+        title: "QR Code Generator",
         newTab: false,
         path: "/ai-examples/spreadsheet-generator",
       },
       {
         id: 71,
-        title: "Interview Question Generator",
+        title: "KI-Assistenten erstellen",
         newTab: false,
         path: "/ai-examples/interview-question-generator",
       },
