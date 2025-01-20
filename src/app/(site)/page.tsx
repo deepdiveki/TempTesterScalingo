@@ -6,8 +6,8 @@ import { Metadata } from "next";
 import { integrations } from "../../../integrations.config";
 
 export const metadata: Metadata = {
-  title: "AI Tool - Next.js Template for AI Tools",
-  description: "This is Home for AI Tool",
+  title: "DeepDive KI ToolBox und KI Fortbildungen",
+  description: "DeepDive KI ToolBox und KI Fortbildungen",
   // other metadata
 };
 

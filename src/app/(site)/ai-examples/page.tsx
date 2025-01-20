@@ -43,7 +43,7 @@ const AiToolPage = () => {
 
   return (
     <>
-      <title>OpenAI Examples | AI Tool - Next.js Template for AI Tools</title>
+      <title>DeepDive KI ToolBox und KI Fortbildungens</title>
       <meta name="description" content="This is AI Examples page for AI Tool" />
 
       <Breadcrumb pageTitle="DDKI ToolBox" />

@@ -3,8 +3,8 @@ import { getAllPosts } from "@/libs/markdown";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Docs | AI Tool - Next.js Template for AI Tools",
-  description: "This is Docs page for AI Tool",
+  title: "Fortbildungen | DeepDive KI ToolBox und KI Fortbildungen",
+  description: "DeepDive KI ToolBox und KI Fortbildungen",
   // other metadata
 };
 

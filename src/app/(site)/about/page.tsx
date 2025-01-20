@@ -6,8 +6,8 @@ import Features from "@/components/Home/Features";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About | AI Tool - Next.js Template for AI Tools",
-  description: "This is About page for AI Tool",
+  title: "Über uns | DeepDive KI ToolBox und KI Fortbildungen",
+  description: "Über uns DeepDive KI ToolBox und KI Fortbildungen",
   // other metadata
 };
 
