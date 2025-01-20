@@ -17,14 +17,7 @@ const menuData: Menu[] = [
     id: 5,
     title: "Fortbildungen",
     newTab: false,
-    submenu: [
-      {
-        id: 36,
-        title: "404",
-        newTab: false,
-        path: "/error",
-      },
-    ],
+    path: "/fortbildungen"
   },
 
   {
