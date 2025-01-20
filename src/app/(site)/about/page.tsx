@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <>
-      <Breadcrumb pageTitle="About Page" />
+      <Breadcrumb pageTitle="Über uns" />
       <AboutSection />
       <Features />
       <Team />

@@ -59,13 +59,14 @@ const CallToAction = () => {
             </h2>
             <p className="mx-auto mb-9 max-w-[714px] font-medium">
               Wir helfen Ihnen dabei, die KI-Technologie in Ihre IT-Systeme zu integrieren. Unsere Tools sind benutzerfreundlich und einfach zu bedienen. Probieren Sie es aus!
+              Sehr hilfreich sind auch unsere Fortbildungen eine Übersicht finden Sie hier:
             </p>
 
             <Link
-              href="/"
+              href="/fortbildungen"
               className="hero-button-gradient inline-flex rounded-lg px-7 py-3 font-medium text-white duration-300 ease-in hover:opacity-80"
             >
-              Jetzt ausprobieren
+              Jetzt Fortbildungen buchen
             </Link>
           </div>
         </div>
