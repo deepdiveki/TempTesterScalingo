@@ -31,14 +31,12 @@ const Footer = () => {
               </Link>
 
               <p className="mb-12 xl:w-4/5">
-                Build SaaS AI applications using OpenAI and Next.js, this kit
-                comes with pre-configured and pre-built examples, making it
-                easier to quickly kickstart your AI startup.
+              DeepDiveKI bietet eine umfassende Palette an einsatzbereiten Tools, um Lehrende zu entlasten, den Unterricht effizienter zu gestalten und gleichzeitig das Lernpotenzial der Schüler:innen voll auszuschöpfen.
               </p>
 
 
               <p className="mt-5.5 font-medium">
-                AI Tool, LLC. All rights reserved.
+                DeepDive-KI UG (haftungsbeschränkt)
               </p>
             </div>
 

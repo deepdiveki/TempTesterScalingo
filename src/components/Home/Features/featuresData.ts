@@ -5,42 +5,42 @@ const featuresData: Feature[] = [
     id: 11,
     title: "OpenAI Integration",
     description:
-      "Our AI writing tool analyzes your content, suggests improvements",
+      "Datenschutzkonforme Integration für optimale Ergebnisse",
     icon: "/images/features/icon-01.svg",
   },
   {
     id: 27,
     title: "Next.js 13, React 18, TS",
-    description: "Say goodbye to embarrassing typos and grammar mistakes",
+    description: "Neuste Full-Stack Technologien für beste Performance",
     icon: "/images/features/icon-02.svg",
   },
   {
     id: 21,
-    title: "Auth, DB, Sanity Blog",
+    title: "Sicherheit & Datenschutz",
     description:
-      "Originality is key, and our AI writing tool helps you maintain it",
+      "Sicherheit und Datenschutz sind uns wichtig. Wir halten uns an die DSGVO",
     icon: "/images/features/icon-03.svg",
   },
   {
     id: 3,
-    title: "Cutting-edge Technologies",
+    title: "Cutting-edge Technologien",
     description:
-      "Transform your spoken words into written text easily & effortlessly",
+      "Moderne Technologien für beste Performance und Nutzererfahrung",
     icon: "/images/features/icon-04.svg",
     rotate: true,
   },
   {
     id: 48,
-    title: "Pre-made AI Examples",
+    title: "Optimierte KI Modelle",
     description:
-      "Whether you need a professional, or positive tone it has everyone",
+      "KI Modelle für optimale Ergebnisse und beste Nutzererfahrung",
     icon: "/images/features/icon-05.svg",
     rotate: true,
   },
   {
     id: 3,
-    title: "Rich Documentation",
-    description: "Need inspiration or assistance with generating content?",
+    title: "Made in Hamburg",
+    description: "Von uns für euch - Made in Hamburg",
     icon: "/images/features/icon-06.svg",
     rotate: true,
   },

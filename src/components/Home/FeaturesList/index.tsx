@@ -23,23 +23,20 @@ const FeaturesList = () => {
                         />
 
                         <span className="hero-subtitle-text">
-                          Kickstart your AI Startup
+                          Integrieren Sie Künstliche Intelligenz in Ihre Schule
                         </span>
                       </span>
                       <h3 className="mb-4.5 text-heading-4 font-bold text-white">
-                        Seamless OpenAI Integration
+                        Künstliche Intelligenz für Schulen und Universitäten
                       </h3>
                       <p className="mb-10 font-medium">
-                        Build SaaS AI applications using OpenAI and Next.js,
-                        this kit comes with pre-configured and pre-built
-                        examples, making it easier to quickly kickstart your AI
-                        startup.
+                        Mit der DeepDiveKI ToolBox sind Sie in der Lage viele praktische KI -Tools in ihre Institution zu integrieren.
                       </p>
                       <Link
                         href="/#"
                         className="features-button-gradient relative inline-flex items-center gap-1.5 rounded-full px-6 py-3 text-sm text-white duration-300 ease-in hover:shadow-button"
                       >
-                        Learn more
+                        Jetzt ausprobieren
                         <svg
                           width="14"
                           height="12"
@@ -135,12 +132,10 @@ const FeaturesList = () => {
                     </span>
 
                     <h3 className="mb-4.5 text-heading-6 font-semibold text-white">
-                      All Essential SaaS Pages
+                      KI Tools für Ihre Schule oder Universität
                     </h3>
                     <p className="font-medium">
-                      Build SaaS AI applications using OpenAI and Next.js, this
-                      kit comes with pre-configured and pre-built examples,
-                      making it easier to quickly kickstart.
+                      Ob zur Unterstützung bei Aufgaben, der Analyse von Lernergebnissen oder der Erstellung interaktiver Inhalte – unsere Plattform hilft dabei, den Unterricht moderner und zugänglicher zu machen.
                     </p>
                   </div>
 
@@ -196,11 +191,10 @@ const FeaturesList = () => {
                     </span>
 
                     <h3 className="mb-4.5 text-heading-6 font-semibold text-white">
-                      Highly Customizable
+                      Individuelle Anpassung und Entwicklung von KI-Tools
                     </h3>
                     <p className="font-medium">
-                      Build SaaS AI applications using OpenAI and Next.js,
-                      quickly kickstart your AI startup.
+                      KI-Tools individuell an Ihre Bedürfnisse anzupassen und konstante Weiterentwicklung der Tools.
                     </p>
                   </div>
 

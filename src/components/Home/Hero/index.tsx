@@ -36,24 +36,21 @@ const Hero = () => {
             />
 
             <span className="hero-subtitle-text">
-              Launch Your AI Startup with
+              Für die Zukunft mit KI:
             </span>
           </span>
           <h1 className="mb-6 text-3xl font-extrabold text-white sm:text-5xl xl:text-heading-1">
-            OpenAI + Next.js SaaS Boilerplate and Starter Kit
+            DeepDive-KI Tool Box 
           </h1>
           <p className="mx-auto mb-9 max-w-[500px] font-medium md:text-lg">
-            Ideal for developers looking to build SaaS applications using OpenAI
-            and Next.js, this starter kit comes with pre-configured and
-            pre-built examples, making it easier to quickly kickstart your AI
-            startup.
+          Unsere Plattform bietet Lehrenden an Schulen und Universitäten eine innovative Möglichkeit, Künstliche Intelligenz (KI) gezielt im Unterricht einzusetzen.
           </p>
 
           <Link
             href="/ai-examples"
             className="hero-button-gradient inline-flex rounded-lg px-7 py-3 font-medium text-white duration-300 ease-in hover:opacity-80"
           >
-            Try AI Examples
+            Jetzt ausprobieren
           </Link>
         </div>
       </div>

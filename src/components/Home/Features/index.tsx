@@ -10,9 +10,9 @@ const Features = () => {
     >
       <div className="mx-auto max-w-[1222px] px-4 sm:px-8 xl:px-0">
         <SectionTitle
-          subTitle="Main Features"
-          title="Key Features of AI Tool"
-          paragraph="A Complete Solution for AI SaaS Startups"
+          subTitle="Wichtige Funktionen"
+          title="Unsere Funktionen im Überblick"
+          paragraph="Spezifische Informationen zu den Funktionen unserer Plattform finden Sie hier."
         />
 
         <div className="relative">
