@@ -46,7 +46,7 @@ const AiToolPage = () => {
       <title>OpenAI Examples | AI Tool - Next.js Template for AI Tools</title>
       <meta name="description" content="This is AI Examples page for AI Tool" />
 
-      <Breadcrumb pageTitle="OpenAI Examples" />
+      <Breadcrumb pageTitle="DDKI ToolBox" />
 
       <section className="pb-25 pt-3">
         <div className="z-10 mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
@@ -70,6 +70,56 @@ const AiToolPage = () => {
             </button>
           </div>
 
+          {/* Horizontal Divider for "KI Tools" */}
+          <div className="my-8">
+            <hr className="border-t border-gray-500" />
+            <div className="mt-4 text-center">
+              <p className="text-xl font-semibold text-gray-300">
+                KI Tools und Assistenten
+              </p>
+            </div>
+          </div>
+
+          {/* First Set of AI Tools */}
+          <AiToolExample />
+
+          {/* Horizontal Divider for "KI Leistungsbewertung" */}
+          <div className="my-8">
+            <hr className="border-t border-gray-500" />
+            <div className="mt-4 text-center">
+              <p className="text-lg font-semibold text-gray-300">
+                KI Tools für Leistungsbewertung und kriterienbasiertes Feedback
+              </p>
+            </div>
+          </div>
+
+          {/* Second Set of AI Tools */}
+          <AiToolExample />
+
+          {/* Horizontal Divider for "Material erstellen" */}
+          <div className="my-8">
+            <hr className="border-t border-gray-500" />
+            <div className="mt-4 text-center">
+              <p className="text-lg font-semibold text-gray-300">
+                Material erstellen
+              </p>
+            </div>
+          </div>
+
+          {/* Third Set of AI Tools */}
+          <AiToolExample />
+
+          {/* Horizontal Divider for "Inhalte teilen" */}
+          <div className="my-8">
+            <hr className="border-t border-gray-500" />
+            <div className="mt-4 text-center">
+              <p className="text-xl font-semibold text-gray-300">
+                Inhalte teilen
+              </p>
+            </div>
+          </div>
+
+          {/* Fourth Set of AI Tools */}
           <AiToolExample />
         </div>
 

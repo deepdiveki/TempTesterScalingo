@@ -29,7 +29,7 @@ const menuData: Menu[] = [
 
   {
     id: 6,
-    title: "OpenAI Examples",
+    title: "DDKI ToolBox",
     newTab: false,
     path: "/ai-examples",
     submenu: [
