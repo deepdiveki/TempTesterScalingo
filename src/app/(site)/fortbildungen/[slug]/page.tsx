@@ -17,7 +17,7 @@ export async function generateMetadata(props: Props) {
     return {
       title: `${post.title || "Single Post Page"} | ${siteName}`,
       description: `${post.metadata?.slice(0, 136)}...`,
-      author: authorName,
+      
 
       robots: {
         index: true,
