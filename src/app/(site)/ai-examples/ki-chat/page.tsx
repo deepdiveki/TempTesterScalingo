@@ -37,6 +37,9 @@ const DDKIKiChat = () => {
       },
     ];
 
+    //for the demo
+    const apiKey = localStorage.getItem("apiKey");
+
     try {
       const response = await axios.post(
         "/api/generate-content",
