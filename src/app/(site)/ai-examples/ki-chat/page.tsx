@@ -107,7 +107,7 @@ const DDKIKiChat = () => {
               type="text"
               value={inputMessage}
               onChange={handleChange}
-              placeholder="Sende eine Nachricht an ChatGPT"
+              placeholder="Sende eine Nachricht an den DDKI KI-Chat"
               className="flex-1 bg-transparent text-white px-3 py-2 outline-none placeholder-gray-500"
             />
 
