@@ -36,7 +36,7 @@ const menuData: Menu[] = [
         id: 67,
         title: "KI Chatbot",
         newTab: false,
-        path: "/ai-examples/business-name-generator",
+        path: "/ai-examples/ki-chat",
       },
       {
         id: 69,
