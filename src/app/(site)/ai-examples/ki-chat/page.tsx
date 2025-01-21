@@ -1,16 +1,14 @@
 "use client";
-import Options from "@/components/AiTools/Options";
-import PreviewGeneratedText from "@/components/AiTools/PreviewGeneratedText";
 import Breadcrumb from "@/components/Breadcrumb";
 import axios from "axios";
 import { useState } from "react";
-import z from "zod";
-import { integrations, messages } from "../../../../../integrations.config";
-import toast from "react-hot-toast";
 
 const DDKIKiChat = () => {
   const [generatedContent, setGeneratedContent] = useState("");
   const [inputMessage, setInputMessage] = useState("");
+  const [messages, setMessages] = useState<{ sender: string; text: string }[]>(
+    []
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputMessage(e.target.value);
@@ -23,6 +21,9 @@ const DDKIKiChat = () => {
       alert("Please enter a message.");
       return;
     }
+
+    // Add the user's message to the chat
+    setMessages((prev) => [...prev, { sender: "user", text: inputMessage }]);
 
     setGeneratedContent("Generating response...");
 
@@ -37,7 +38,6 @@ const DDKIKiChat = () => {
       },
     ];
 
-    //for the demo
     const apiKey = localStorage.getItem("apiKey");
 
     try {
@@ -48,10 +48,14 @@ const DDKIKiChat = () => {
           headers: {
             "Content-Type": "application/json",
           },
-        },
+        }
       );
 
-      setGeneratedContent(response.data);
+      const botMessage = response.data || "No response generated.";
+      setGeneratedContent(botMessage);
+
+      // Add the AI's response to the chat
+      setMessages((prev) => [...prev, { sender: "bot", text: botMessage }]);
     } catch (error: any) {
       setGeneratedContent("Please Add the API Key!");
       console.error("Error:", error?.message);
@@ -67,32 +71,52 @@ const DDKIKiChat = () => {
       <Breadcrumb pageTitle="KI-Chat" />
 
       <section className="pb-17.5 lg:pb-22.5 xl:pb-27.5">
-        <div className="mx-auto max-w-[600px] px-4 sm:px-8">
-          <div className="gradient-box rounded-lg bg-dark-8 p-8">
-            <h2 className="pb-2 text-xl font-bold text-white">Chat Output:</h2>
-            <div
-              className="rounded-lg border border-white/[0.12] bg-dark-7 p-4 text-white"
-              style={{ minHeight: "150px" }}
-            >
-              {generatedContent || "No message generated yet."}
-            </div>
+        <div className="mx-auto max-w-[800px] px-4 sm:px-8">
+          {/* Chat Messages */}
+          <div className="rounded-lg bg-transparent p-8 space-y-4">
+
+            {messages.map((message, index) => (
+              <div
+                key={index}
+                className={`flex ${
+                  message.sender === "user" ? "justify-end" : "justify-start"
+                }`}
+              >
+                <div
+                  className={`rounded-lg p-3 ${
+                    message.sender === "user"
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-700 text-white"
+                  } max-w-[70%]`}
+                >
+                  {message.text}
+                </div>
+              </div>
+            ))}
           </div>
 
-          <form onSubmit={handleSubmit} className="mt-8">
+          {/* Chat Input Field */}
+          <form
+            onSubmit={handleSubmit}
+            className="flex items-center bg-gray-800 rounded-lg p-2 mt-4 shadow-md"
+          >
+
+
+            {/* Input Field */}
             <input
-              onChange={handleChange}
-              value={inputMessage}
-              name="message"
               type="text"
-              className="w-full rounded-lg border border-white/[0.12] bg-dark-7 px-5 py-3 text-white outline-none focus:border-purple"
-              placeholder="Sende eine Nachricht an den DDKI KI-Chat"
-              required
+              value={inputMessage}
+              onChange={handleChange}
+              placeholder="Sende eine Nachricht an ChatGPT"
+              className="flex-1 bg-transparent text-white px-3 py-2 outline-none placeholder-gray-500"
             />
+
+            {/* Submit Button */}
             <button
               type="submit"
-              className="hero-button-gradient mt-5 w-full rounded-lg px-7 py-3 text-center font-medium text-white duration-300 ease-in hover:opacity-80"
+              className="flex items-center justify-center bg-gray-700 text-white w-10 h-10 rounded-full hover:bg-gray-600"
             >
-              Send
+              ▲
             </button>
           </form>
         </div>
