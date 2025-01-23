@@ -1,4 +1,3 @@
-import bcrypt from "bcrypt";
 // import { prisma } from "@/libs/prismaDB";
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
