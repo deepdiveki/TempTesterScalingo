@@ -1,5 +1,4 @@
-import prisma from '../lib/prisma'; // Import your Prisma instance
-import bcrypt from 'bcrypt'; // Import bcrypt for password hashing
+import prisma from '@/lib/prisma'; // Import your Prisma instance
 
 async function main() {
   // Hash the user's password
