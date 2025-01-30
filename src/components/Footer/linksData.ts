@@ -30,8 +30,8 @@ export const companiesLink: FooterLink[] = [
   },
   {
     id: 13,
-    title: "Datenschutzhinweise",
-    href: "#",
+    title: "Datenschutz",
+    href: "/datenschutz",
     newTab: false,
   },
   {
