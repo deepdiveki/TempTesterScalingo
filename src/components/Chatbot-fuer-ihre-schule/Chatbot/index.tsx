@@ -1,8 +1,11 @@
-import SectionTitle from "@/components/Common/SectionTitle";
+import Image from "next/image";
 import SingleFeature from "./SingleFeature";
-import featuresData from "./featuresData";
+import featuresDatachatbot from "./chatbotData";
+import SectionTitle from "@/components/Common/SectionTitle";
 
-const Features = () => {
+
+
+const Chatbot = () => {
   return (
     <section
       id="features"
@@ -10,9 +13,9 @@ const Features = () => {
     >
       <div className="mx-auto max-w-[1222px] px-4 sm:px-8 xl:px-0">
         <SectionTitle
-          subTitle="Technische Informationen"
-          title="Unser Techstack im Überblick"
-          paragraph="Spezifische Informationen zu den Funktionen, Technologien und genutzen API's unserer Plattform finden Sie hier."
+          subTitle="Chabot Funktionen"
+          title="Die Funktionen des Chatbots im Überblick"
+          paragraph="Spezifische Informationen zu den Funktionen unseres Chatbots finden Sie hier."
         />
 
         <div className="relative">
@@ -21,8 +24,8 @@ const Features = () => {
 
           {/* <!--=== Features Row ===--> */}
           <div className="flex flex-wrap justify-center">
-            {featuresData.slice(0, 3).map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
+            {featuresDatachatbot.slice(0, 3).map((feature) => (
+              <SingleFeature key={feature.id} featuresDatachatbot={feature} />
             ))}
           </div>
 
@@ -30,8 +33,8 @@ const Features = () => {
 
           {/* <!--=== Features Row ===--> */}
           <div className="flex flex-wrap justify-center">
-            {featuresData.slice(3).map((feature) => (
-              <SingleFeature key={feature.id} feature={feature} />
+            {featuresDatachatbot.slice(3).map((feature) => (
+              <SingleFeature key={feature.id} featuresDatachatbot={feature} />
             ))}
           </div>
         </div>
@@ -40,4 +43,4 @@ const Features = () => {
   );
 };
 
-export default Features;
+export default Chatbot;

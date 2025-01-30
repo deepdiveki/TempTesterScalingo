@@ -14,13 +14,6 @@ const menuData: Menu[] = [
     path: "/about",
   },
   {
-    id: 5,
-    title: "Fortbildungen",
-    newTab: false,
-    path: "/fortbildungen"
-  },
-
-  {
     id: 6,
     title: "DDKI ToolBox",
     newTab: false,
@@ -36,7 +29,7 @@ const menuData: Menu[] = [
         id: 67,
         title: "KI Chatbot",
         newTab: false,
-        path: "/ai-examples/ki-chat",
+        path: "/ai-examples/business-name-generator",
       },
       {
         id: 69,
@@ -64,5 +57,20 @@ const menuData: Menu[] = [
       },
     ],
   },
+  {
+    id: 7,
+    title: "Chatbot für Ihre Schule ",
+    newTab: false,
+    path: "/chatbot-fuer-ihre-schule"
+  },
+  {
+    id: 5,
+    title: "Fortbildungen",
+    newTab: false,
+    path: "/fortbildungen"
+  },
+
+
+
 ];
 export default menuData;
