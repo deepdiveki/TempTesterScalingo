@@ -15,7 +15,7 @@ export const productsLink: FooterLink[] = [
   },
   {
     id: 3,
-    title: "Fortbildugnen",
+    title: "Fortbildungen",
     href: "#",
     newTab: false,
   },

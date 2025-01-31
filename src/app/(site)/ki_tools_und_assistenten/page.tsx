@@ -4,6 +4,13 @@ import AiToolExample from "@/components/AiTools/AiToolExample";
 import Breadcrumb from "@/components/Breadcrumb";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import Inhalte_teilen from "@/components/AiTools/Inhalte_teilen";
+import Material_erstellen from "@/components/AiTools/Material_erstellen";
+import KI_Tools_für_Leistungsbewertung_und_kriterienbasiertes_Feedback from "@/components/AiTools/KI_Tools_für_Leistungsbewertung_und_kriterienbasiertes_Feedback";
+import KI_Tools_und_Assistenten from "@/components/AiTools/KI_Tools_und_Assistenten";
+
+
+
 
 const AiToolPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -63,7 +70,7 @@ const AiToolPage = () => {
           </div>
 
           {/* First Set of AI Tools */}
-          <AiToolExample />
+          <KI_Tools_und_Assistenten />
 
           {/* Horizontal Divider for "KI Leistungsbewertung" */}
           <div className="my-8">
@@ -76,7 +83,7 @@ const AiToolPage = () => {
           </div>
 
           {/* Second Set of AI Tools */}
-          <AiToolExample />
+          <KI_Tools_für_Leistungsbewertung_und_kriterienbasiertes_Feedback />
 
           {/* Horizontal Divider for "Material erstellen" */}
           <div className="my-8">
@@ -89,7 +96,7 @@ const AiToolPage = () => {
           </div>
 
           {/* Third Set of AI Tools */}
-          <AiToolExample />
+          <Material_erstellen />
 
           {/* Horizontal Divider for "Inhalte teilen" */}
           <div className="my-8">
@@ -102,7 +109,7 @@ const AiToolPage = () => {
           </div>
 
           {/* Fourth Set of AI Tools */}
-          <AiToolExample />
+          <Inhalte_teilen />
         </div>
 
         {isOpen && <APIkeyModal handleModal={handleModal} />}
