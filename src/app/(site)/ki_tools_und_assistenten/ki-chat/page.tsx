@@ -1,72 +1,36 @@
 "use client";
-import Options from "@/components/AiTools/Options";
-import PreviewGeneratedText from "@/components/AiTools/PreviewGeneratedText";
 import Breadcrumb from "@/components/Breadcrumb";
 import axios from "axios";
 import { useState } from "react";
-import z from "zod";
-import { integrations, messages } from "../../../../../integrations.config";
-import toast from "react-hot-toast";
-
-const BusinessNameGeneratorSchema = z.object({
-  keyword: z.string(),
-  industry: z.string(),
-});
-
-const optionData = [
-  "Technology and Software",
-  "Finance and Banking",
-  "Healthcare and Pharmaceuticals",
-  "Retail and Consumer Goods",
-  "Entertainment and Media",
-];
-
-const BusinessNameGeneratorPage = () => {
+const DDKIKiChat = () => {
   const [generatedContent, setGeneratedContent] = useState("");
-  const [data, setData] = useState({
-    keyword: "",
-    industry: "",
-  });
-
-  const handleChange = (e: any) => {
-    setData({
-      ...data,
-      [e.target.name]: e.target.value,
-    });
+  const [inputMessage, setInputMessage] = useState("");
+  const [messages, setMessages] = useState<{ sender: string; text: string }[]>(
+    []
+  );
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputMessage(e.target.value);
   };
-
-  const handleSubmit = async (e: any) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    if (!integrations?.isOpenAIEnabled) {
-      toast.error(messages.opanAi);
+    if (!inputMessage) {
+      alert("Please enter a message.");
       return;
     }
-
-    const validation = BusinessNameGeneratorSchema.safeParse(data);
-    if (!validation.success) {
-      toast.error(validation.error.errors[0].message);
-      return;
-    }
-
-    setGeneratedContent("Loading....");
-
-    // the prompt
+    // Add the user's message to the chat
+    setMessages((prev) => [...prev, { sender: "user", text: inputMessage }]);
+    setGeneratedContent("Generating response...");
     const prompt = [
       {
         role: "system",
-        content:
-          "You will be provided with the business name and industry name, and your task is to generate product names \n",
+        content: "You are an AI chatbot. Respond to the user's message.",
       },
       {
         role: "user",
-        content: `Business keyword: ${data.keyword} \n Business industry: ${data.industry}`,
+        content: inputMessage,
       },
     ];
-
-    //for the demo
     const apiKey = localStorage.getItem("apiKey");
-
     try {
       const response = await axios.post(
         "/api/generate-content",
@@ -75,78 +39,70 @@ const BusinessNameGeneratorPage = () => {
           headers: {
             "Content-Type": "application/json",
           },
-        },
+        }
       );
-
-      setGeneratedContent(response.data);
+      const botMessage = response.data || "No response generated.";
+      setGeneratedContent(botMessage);
+      // Add the AI's response to the chat
+      setMessages((prev) => [...prev, { sender: "bot", text: botMessage }]);
     } catch (error: any) {
       setGeneratedContent("Please Add the API Key!");
       console.error("Error:", error?.message);
     }
-
-    setData({
-      keyword: "",
-      industry: "",
-    });
+    setInputMessage("");
   };
-
   return (
     <>
-      <title>
-        Business Name Generator | AI Tool - Next.js Template for AI Tools
-      </title>
+      <title>DDKI KI-Chat</title>
       <meta name="description" content="This is AI Examples page for AI Tool" />
       <Breadcrumb pageTitle="KI-Chat" />
-
       <section className="pb-17.5 lg:pb-22.5 xl:pb-27.5">
-        <div className="mx-auto grid max-w-[1170px] gap-8 px-4 sm:px-8 lg:grid-cols-12 xl:px-0">
-          <div className="gradient-box rounded-lg bg-dark-8 p-8 lg:col-span-4">
-            <h2 className="pb-2 text-2xl font-bold text-white">
-              Business Topic
-            </h2>
-            <p className="pb-6">What your business will be about?</p>
-            <form onSubmit={handleSubmit}>
-              <div className="flex flex-col">
-                <label htmlFor="keyword" className="pb-4">
-                  Keyword
-                </label>
-                <input
-                  onChange={handleChange}
-                  value={data.keyword}
-                  name="keyword"
-                  id="keyword"
-                  type="text"
-                  className="rounded-lg border border-white/[0.12] bg-dark-7 px-5 py-3 text-white outline-none focus:border-purple"
-                  placeholder="Type your business keyword"
-                  required
-                />
-              </div>
-
-              <Options
-                title={"Select your Business industry"}
-                name={"industry"}
-                values={optionData}
-                handleChange={handleChange}
-                selected={data.industry}
-              />
-
-              <button
-                type="submit"
-                className="hero-button-gradient mt-5 w-full rounded-lg px-7 py-3 text-center font-medium text-white duration-300 ease-in hover:opacity-80 "
+        <div className="mx-auto max-w-[800px] px-4 sm:px-8">
+          {/* Chat Messages */}
+          <div className="rounded-lg bg-transparent p-8 space-y-4">
+            {messages.map((message, index) => (
+              <div
+                key={index}
+                className={`flex ${
+                  message.sender === "user" ? "justify-end" : "justify-start"
+                }`}
               >
-                Generate
-              </button>
-            </form>
+                <div
+                  className={`rounded-lg p-3 ${
+                    message.sender === "user"
+                      ? "bg-blue-500 text-white"
+                      : "bg-gray-700 text-white"
+                  } max-w-[70%]`}
+                >
+                  {message.text}
+                </div>
+              </div>
+            ))}
           </div>
-
-          <PreviewGeneratedText
-            generatedContent={generatedContent}
-            height={262}
-          />
+          {/* Chat Input Field */}
+          <form
+            onSubmit={handleSubmit}
+            className="flex items-center bg-gray-800 rounded-lg p-2 mt-4 shadow-md"
+          >
+            {/* Input Field */}
+            <input
+              type="text"
+              value={inputMessage}
+              onChange={handleChange}
+              placeholder="Sende eine Nachricht an den DDKI KI-Chat"
+              className="flex-1 bg-transparent text-white px-3 py-2 outline-none placeholder-gray-500"
+            />
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="flex items-center justify-center bg-gray-700 text-white w-10 h-10 rounded-full hover:bg-gray-600"
+            >
+              ▲
+            </button>
+          </form>
         </div>
       </section>
     </>
   );
 };
-
-export default BusinessNameGeneratorPage;
+export default DDKIKiChat;

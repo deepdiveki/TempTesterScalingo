@@ -68,10 +68,10 @@ const CallToAction = () => {
             </p>
 
             <Link
-              href="/fortbildungen"
+              href="/ki_tools_und_assistenten"
               className="hero-button-gradient inline-flex rounded-lg px-7 py-3 font-medium text-white duration-300 ease-in hover:opacity-80"
             >
-              Jetzt Fortbildungen buchen
+              Jetzt Toolbox ausprobieren
             </Link>
           </div>
         </div>
