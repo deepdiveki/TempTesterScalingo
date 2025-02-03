@@ -31,7 +31,7 @@ const Footer = () => {
               </Link>
 
               <p className="mb-12 xl:w-4/5">
-              DeepDiveKI bietet eine umfassende Palette an einsatzbereiten Tools, um Lehrende zu entlasten, den Unterricht effizienter zu gestalten und gleichzeitig das Lernpotenzial der Schüler:innen voll auszuschöpfen.
+              DeepDiveKI bietet eine umfassende Palette an einsatzbereiten KI Tools, um Lehrende zu entlasten, den Unterricht effizienter zu gestalten und gleichzeitig das Lernpotenzial der Schüler:innen voll auszuschöpfen.
               </p>
 
 
