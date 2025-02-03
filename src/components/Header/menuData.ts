@@ -17,7 +17,7 @@ const menuData: Menu[] = [
     id: 6,
     title: "DDKI ToolBox",
     newTab: false,
-    path: "/ki_tools_und_assistenten",
+    path: "https://ddki-chat.vercel.app/",
     submenu: [
       {
         id: 66,
